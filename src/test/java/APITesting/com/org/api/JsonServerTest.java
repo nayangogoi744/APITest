@@ -13,67 +13,66 @@ public class JsonServerTest {
 
 	// See project https://github.com/typicode/json-server
 	//GET request
-	
+
 	//@Test
 	public void Test_01(){
 		Response res = given().
-		when().
-		get("http://localhost:3000/posts");
+				when().
+				get("http://localhost:3000/posts");
 		System.out.println("Response is"+res.asString());
 	}
-	
+
 	//@Test
 	public void Test_02(){
 		Response res = given().
-		body("   {\"id\":\"2\","
-				+ "\"title\":\"nayan\","
-				+ "\"author\":\"gogoi\" }  ").
-		when().
-		contentType(ContentType.JSON).
-		post("http://localhost:3000/posts");
-		
+				body("   {\"id\":\"2\","
+						+ "\"title\":\"nayan\","
+						+ "\"author\":\"gogoi\" }  ").
+				when().
+				contentType(ContentType.JSON).
+				post("http://localhost:3000/posts");
+
 		System.out.println("Response is:"+res.asString());
-		
+
 	}
-	
+
 	@Test
-		public void Test_03(){
-		
+	public void Test_03(){
+
 		PostRequestJava pr = new PostRequestJava();
 		pr.setId("3");
 		pr.setTitle("Niva");
 		pr.setAuthor("Kalita");
-		
-			Response res = given().
-			when().
-			contentType(ContentType.JSON).
-			body(pr).
-			post("http://localhost:3000/posts");
-			
-			System.out.println("Response is:"+res.asString());
-			
-		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+		Response res = given().
+				when().
+				contentType(ContentType.JSON).
+				body(pr).
+				post("http://localhost:3000/posts");
+
+		System.out.println("Response is:"+res.asString());
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
-	
